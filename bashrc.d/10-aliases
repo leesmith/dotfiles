@@ -1,0 +1,11 @@
+# vim: set ft=sh sw=2 ts=2 expandtab:
+
+# Postgresql
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop'
+
+# Homebrew update && outdated
+alias brewup='brew update && brew outdated'
+
+# Homebrew cleanup, prune & doctor
+alias brewdoc='brew cleanup && brew prune && brew doctor'

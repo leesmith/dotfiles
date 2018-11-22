@@ -1,0 +1,5 @@
+# vim: set ft=sh sw=2 ts=2 expandtab:
+
+prepend_path "${HOME}/.rbenv/bin"
+eval "$(rbenv init -)"
+prepend_path "./bin"

@@ -1,0 +1,58 @@
+# Remove the default keybinding
+unbind-key C-b
+
+# Set a new keybinding to C-/. In terminals C-/ is the same as C-_
+# however in tmux we can't bind to C-/
+set -g prefix C-_
+
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Mouse mode
+set -g mouse on
+bind -n WheelUpPane   select-pane -t= \; copy-mode -e \; send-keys -M
+bind -n WheelDownPane select-pane -t= \;                 send-keys -M
+
+# change the escape time in tmux to zero
+set-option -sg escape-time 0
+
+# Select panes, vim-motion style
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# Resize panes in repeatable increments, vim-motion style
+bind-key -r H resize-pane -L 5
+bind-key -r J resize-pane -D 5
+bind-key -r K resize-pane -U 5
+bind-key -r L resize-pane -R 5
+
+# Set term color properly
+set -g default-terminal "screen-256color"
+
+# Solarized Dark
+set -g status-fg blue
+set -g status-bg black
+setw -g window-status-current-fg white
+
+# Solarized Light
+# set -g status-bg white
+# set -g status-fg brightyellow
+# setw -g window-status-current-fg black
+
+# Status bar
+set -g status-left-length 40
+set -g status-left '#[fg=black,bg=green,nobold] ❐ #h:#S #[fg=green,bg=black,nobold]'
+set -g window-status-format '#[fg=blue,bg=black] #I  #W '
+set -g window-status-current-format '#[fg=black,bg=yellow]#[fg=black,bg=yellow,noreverse,bold] #I  #W #[fg=yellow,bg=black,nobold]'
+set -g status-right '#[fg=yellow]%A %v %l:%M %p'
+
+# Copy mode key bindings
+bind-key -T edit-mode-vi Up send-keys -X history-up
+bind-key -T edit-mode-vi Down send-keys -X history-down
+unbind-key -T copy-mode-vi Space     ;   bind-key -T copy-mode-vi v send-keys -X begin-selection
+unbind-key -T copy-mode-vi Enter     ;   bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+unbind-key -T copy-mode-vi C-v       ;   bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+unbind-key -T copy-mode-vi [         ;   bind-key -T copy-mode-vi [ send-keys -X begin-selection
+unbind-key -T copy-mode-vi ]         ;   bind-key -T copy-mode-vi ] send-keys -X copy-selection
