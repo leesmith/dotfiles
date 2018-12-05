@@ -6,8 +6,11 @@
 # Enable font smoothing (non-retina screens)
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
-# Disable smart quotes as they’re annoying when typing code
+# Disable smart quotes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
