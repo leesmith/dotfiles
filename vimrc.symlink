@@ -20,6 +20,7 @@ if exists('*minpac#init')
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('altercation/vim-colors-solarized')
   call minpac#add('ctrlpvim/ctrlp.vim')
+  call minpac#add('itchyny/lightline.vim')
   call minpac#add('jgdavey/tslime.vim')
   call minpac#add('jgdavey/vim-turbux')
   call minpac#add('mattn/emmet-vim')
@@ -38,8 +39,6 @@ if exists('*minpac#init')
   call minpac#add('tpope/vim-rake')
   call minpac#add('tpope/vim-repeat')
   call minpac#add('tpope/vim-surround')
-  call minpac#add('vim-airline/vim-airline')
-  call minpac#add('vim-airline/vim-airline-themes')
   call minpac#add('vim-ruby/vim-ruby')
   call minpac#add('vim-scripts/matchit.zip')
 
@@ -50,12 +49,24 @@ if exists('*minpac#init')
 
   " use solarized for colorscheme
   if isdirectory($HOME . "/.vim/pack/minpac/start/vim-colors-solarized")
+    set background=dark
+    " set background=light
     colorscheme solarized
   endif
 
-  " vim-airline
-  let g:airline_powerline_fonts=1
-  let g:airline_theme='solarized'
+  " lightline
+  let g:lightline = {
+        \ 'colorscheme': 'solarized',
+        \ 'active': {
+        \   'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']]
+        \ },
+        \ 'component': { 'lineinfo': ' %3l:%-2v' },
+        \ 'separator': { 'left': '', 'right': '' },
+        \ 'subseparator': { 'left': '', 'right': '' },
+        \ 'component_function': {
+        \   'gitbranch': 'fugitive#head'
+        \ },
+        \ }
 
   " set sign column for vim-gitgutter
   highlight SignColumn ctermbg=8
@@ -80,7 +91,6 @@ set encoding=utf-8
 
 " Color
 set t_Co=256
-set background=dark
 syntax on
 
 " Highlight breakpoints
@@ -135,13 +145,6 @@ endif
 " Fix backspace
 set backspace=indent,eol,start
 
-" GUI options
-if (has('gui_running'))
-  set guifont=Inconsolata-dz:h12
-  set guioptions-=T
-  set guioptions-=m
-endif
-
 " Highlight unwanted spaces
 set list listchars=tab:»·,trail:·
 
@@ -190,7 +193,7 @@ nnoremap <localleader>ws m`:%s/\s\+$//e<CR>``
 " Remove trailing whitespace on save of ruby files
 au BufWritePre *.rb :%s/\s\+$//e
 
-" edit OSX crontab in-place
+" edit MacOS crontab in-place
 autocmd FileType crontab setlocal nowritebackup
 
 "=============================================
