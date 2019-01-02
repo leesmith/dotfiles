@@ -69,9 +69,6 @@ if exists('*minpac#init')
         \ },
         \ }
 
-  " set sign column for vim-gitgutter
-  highlight SignColumn ctermbg=8
-
   " Prettier: run before saving (async)
   " let g:prettier#autoformat = 0
   " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
