@@ -8,4 +8,4 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop'
 alias brewup='brew update && brew outdated'
 
 # Homebrew cleanup, prune & doctor
-alias brewdoc='brew cleanup && brew prune && brew doctor'
+alias brewdoc='brew cleanup && brew doctor'
