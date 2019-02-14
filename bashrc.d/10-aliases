@@ -9,3 +9,6 @@ alias brewup='brew update && brew outdated'
 
 # Homebrew cleanup, prune & doctor
 alias brewdoc='brew cleanup && brew doctor'
+
+# Weather
+alias wttr='curl -s http://wttr.in/'
