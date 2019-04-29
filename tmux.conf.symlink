@@ -34,7 +34,7 @@ set -g default-terminal "screen-256color"
 # Solarized Dark
 set -g status-fg blue
 set -g status-bg black
-setw -g window-status-current-fg white
+#setw -g window-status-current-fg white
 
 # Solarized Light
 # set -g status-bg white
