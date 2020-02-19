@@ -9,5 +9,5 @@
 SESSION=$(basename $(pwd))
 tmux new-session -s $SESSION -d
 tmux split-window -h -p 80 -t $SESSION
-tmux send-keys -t $SESSION:0.1 'vim' C-m
+tmux send-keys -t $SESSION:0.1 'nvim' C-m
 tmux attach -t $SESSION

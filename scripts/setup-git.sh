@@ -33,7 +33,7 @@ global_config "color.status.changed" "yellow"
 global_config "color.status.untracked" "red"
 global_config "color.ui" "true"
 
-global_config "core.editor" "vim"
+global_config "core.editor" "nvim"
 global_config "core.excludesfile" "${HOME}/.gitignore"
 
 global_config "alias.st"    "status --short --branch"

@@ -6,6 +6,14 @@ DIR="$( cd "$(dirname "$0" )" && pwd )"
 # if [ "$(uname -s)" == "Darwin" ]; then
 # fi
 
+# Create nvim file structure
+[ -d "${HOME}/.config" ] || mkdir "${HOME}/.config"
+[ -d "${HOME}/.config/nvim/pack" ]    || mkdir -p "${HOME}/.config/nvim/pack/"
+[ -d "${HOME}/.config/nvim/backups" ] || mkdir -p "${HOME}/.config/nvim/backups"
+[ -d "${HOME}/.config/nvim/swaps" ]   || mkdir -p "${HOME}/.config/nvim/swaps"
+[ -d "${HOME}/.config/nvim/undo" ]    || mkdir -p "${HOME}/.config/nvim/undo"
+ln -fs ${DIR}/nvim/init.vim "${HOME}/.config/nvim/init.vim"
+
 # Link dot files to $HOME
 for dotfile in $(find $DIR -maxdepth 1 -type f -name "*.symlink"); do
   dst="$HOME/.$(basename "${dotfile%.*}")"
@@ -23,12 +31,6 @@ done
 for program in ${DIR}/bin/*; do
   ln -fs $program "${HOME}/bin/$(basename $program)"
 done
-
-# Prepare vim directories
-[ -d "${HOME}/.vim/pack" ]    || mkdir -p "${HOME}/.vim/pack/"
-[ -d "${HOME}/.vim/backups" ] || mkdir -p "${HOME}/.vim/backups"
-[ -d "${HOME}/.vim/swaps" ]   || mkdir -p "${HOME}/.vim/swaps"
-[ -d "${HOME}/.vim/undo" ]    || mkdir -p "${HOME}/.vim/undo"
 
 # Link rbenv default-gems
 [ -d "${HOME}/.rbenv" ] || mkdir "${HOME}/.rbenv"

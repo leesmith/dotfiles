@@ -4,12 +4,12 @@
 
 set -e
 
-if [[ -d "${HOME}/.vim/pack/minpac" ]]; then
+if [[ -d "${HOME}/.config/nvim/pack/minpac" ]]; then
   exit 0
 else
-  [ -d "${HOME}/.vim/pack/minpac/opt" ] || mkdir -p "${HOME}/.vim/pack/minpac/opt"
-  cd "${HOME}/.vim/pack/minpac/opt"
+  [ -d "${HOME}/.config/nvim/pack/minpac/opt" ] || mkdir -p "${HOME}/.config/nvim/pack/minpac/opt"
+  cd "${HOME}/.config/nvim/pack/minpac/opt"
   git clone "git://github.com/k-takata/minpac.git" &>/dev/null
-  vim -c 'call minpac#update()' -c q
+  nvim -c 'call minpac#clean()' -c 'call minpac#update()' -c q
   exit 0
 fi
