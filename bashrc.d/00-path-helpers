@@ -31,3 +31,7 @@ append_path() {
   done
   export PATH
 }
+
+get_ruby_version() {
+  asdf current ruby | awk '{print $1}'
+}

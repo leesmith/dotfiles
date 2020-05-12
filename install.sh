@@ -32,10 +32,6 @@ for program in ${DIR}/bin/*; do
   ln -fs $program "${HOME}/bin/$(basename $program)"
 done
 
-# Link rbenv default-gems
-[ -d "${HOME}/.rbenv" ] || mkdir "${HOME}/.rbenv"
-ln -fs ${DIR}/default-gems "${HOME}/.rbenv/default-gems"
-
 # execute scripts on install
 (exec "${DIR}/scripts/setup-git.sh")
 (exec "${DIR}/scripts/vim-minpac.sh")

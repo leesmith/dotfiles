@@ -5,7 +5,7 @@ scriptencoding utf-8
 "=============================================
 
 " declare ruby path
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
+let g:ruby_path = system('echo $HOME/.asdf/shims/ruby')
 
 " Start .vimrc
 set nocompatible

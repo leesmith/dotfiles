@@ -1,0 +1,6 @@
+# vim: set ft=sh sw=2 ts=2 expandtab:
+
+. $(brew --prefix asdf)/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+prepend_path "./bin"
