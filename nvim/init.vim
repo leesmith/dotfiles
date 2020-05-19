@@ -52,6 +52,7 @@ if exists('*minpac#init')
     set background=dark
     " set background=light
     colorscheme solarized
+    autocmd ColorScheme * highlight! link SignColumn LineNr
   endif
 
   " lightline
