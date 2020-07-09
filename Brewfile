@@ -1,3 +1,8 @@
+tap 'homebrew/bundle'
+tap 'homebrew/cask'
+tap 'homebrew/core'
+tap 'homebrew/cask-fonts'
+
 brew 'ack'
 brew 'archey'
 brew 'asdf'
@@ -10,6 +15,7 @@ brew 'curl'
 brew 'dos2unix'
 brew 'git'
 brew 'node'
+brew 'mas'
 brew 'nvim'
 brew 'pgcli'
 brew 'pidof'
@@ -23,3 +29,16 @@ brew 'tmux'
 brew 'tree'
 brew 'watch'
 brew 'wget'
+
+cask 'adobe-acrobat-reader'
+cask 'alfred'
+cask 'caffeine'
+cask 'firefox'
+cask 'font-jetbrains-mono'
+cask 'fork'
+cask 'google-chrome'
+cask 'iterm2'
+
+mas 'LastPass', id: 926036361
+mas 'Magnet', id: 441258766
+mas 'Tweetbot', id: 1384080005
