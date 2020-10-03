@@ -13,7 +13,7 @@ filetype plugin indent on
 " minpac
 packadd minpac
 
-if exists('*minpac#init')
+if exists('g:loaded_minpac')
   call minpac#init({'verbose': 3})
   call minpac#add('k-takata/minpac', {'type': 'opt'})
   call minpac#add('airblade/vim-gitgutter')
