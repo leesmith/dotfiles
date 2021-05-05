@@ -40,6 +40,5 @@ cask 'fork'
 cask 'google-chrome'
 cask 'iterm2'
 
-mas 'LastPass', id: 926036361
 mas 'Magnet', id: 441258766
 mas 'Tweetbot', id: 1384080005
