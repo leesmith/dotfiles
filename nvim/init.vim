@@ -155,6 +155,11 @@ noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " Set tags file search order
 set tags=./tags;
 
+set foldmethod=indent
+set foldnestmax=2
+set nofoldenable
+set foldlevel=2
+
 "=============================================
 " Remaps
 "=============================================
@@ -184,6 +189,9 @@ nnoremap <localleader>/ :nohlsearch<CR>
 " Trim trailing whitespace
 nnoremap <localleader>ws m`:%s/\s\+$//e<CR>``
 
+" Use space to toggle folding
+nnoremap <space> za
+
 "=============================================
 " Autocommands
 "=============================================
@@ -193,6 +201,14 @@ au BufWritePre *.rb :%s/\s\+$//e
 
 " edit MacOS crontab in-place
 autocmd FileType crontab setlocal nowritebackup
+
+function! MyFoldText()
+    let line = getline(v:foldstart)
+    let foldedlinecount = v:foldend - v:foldstart + 1
+    return repeat(' ', 4). ' ' . repeat('-', 80) . ' [' . foldedlinecount . ' lines]'
+endfunction
+set foldtext=MyFoldText()
+set fillchars=fold:\ 
 
 "=============================================
 " Additional Config Files
