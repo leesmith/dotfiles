@@ -4,7 +4,7 @@ tap 'homebrew/core'
 tap 'homebrew/cask-fonts'
 
 brew 'ack'
-brew 'archey'
+brew 'archey4'
 brew 'asdf'
 brew 'awscli'
 brew 'bash'

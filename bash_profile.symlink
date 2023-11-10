@@ -1,2 +1,2 @@
 source "${HOME}/.bashrc"
-archey -o
+archey -d darwin -l retro_low
