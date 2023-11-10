@@ -1,0 +1,5 @@
+# vim:set ft=sh sw=2 ts=2 expandtab:
+
+if [[ "$(uname)" == 'Darwin' ]]; then
+  append_path "/usr/local/opt/postgresql@15/bin"
+fi
