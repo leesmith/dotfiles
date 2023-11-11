@@ -11,6 +11,8 @@ chsh -s /usr/local/bin/bash
 
 ### Links
 
-![Office Code Pro D](https://github.com/nathco/Office-Code-Pro)
+[Caffeine App](https://www.caffeine-app.net)
 
-![Solarized iTerm2 Color Presets](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+[Office Code Pro D](https://github.com/nathco/Office-Code-Pro)
+
+[Solarized iTerm2 Color Presets](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
