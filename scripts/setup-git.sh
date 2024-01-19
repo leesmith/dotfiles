@@ -37,6 +37,8 @@ global_config "color.ui" "true"
 global_config "core.editor" "nvim"
 global_config "core.excludesfile" "${HOME}/.gitignore"
 
+global_config "core.autocrlf" "true"
+
 global_config "alias.st"    "status --short --branch"
 global_config "alias.co"    "checkout"
 global_config "alias.aa"    "add --all"
