@@ -223,18 +223,26 @@ if !exists('g:rails_projections')
 endif
 
 call extend(g:rails_projections, {
-      \ "app/presenters/*.rb": {
-      \   "command": "presenter",
-      \   "test": "spec/presenter/%s_spec.rb",
-      \   "alternate": "spec/presenter/%s_spec.rb",
+      \ "db/seeds.rb": {'command': 'seeds'},
+      \ "db/seeds/*.rb": {'command': 'seeds'},
+      \ "config/routes/*.rb": {
+      \   "command":   "routes", },
+      \ "app/javascript/controllers/*": {
+      \   "command":   "stimulus", },
+      \ "app/policies/*_policy.rb": {
+      \   "command": "policy",
+      \   "test": ["spec/policy/%s_spec.rb", "test/policy/%s_test.rb"],
+      \   "template": "class %S\nend" },
+      \ "app/queries/*_query.rb": {
+      \   "command": "query",
+      \   "test": ["spec/query/%s_spec.rb", "test/query/%s_test.rb"],
       \   "template": "class %S\nend" },
       \ "app/services/*.rb": {
       \   "command": "service",
-      \   "test": "spec/service/%s_spec.rb",
-      \   "alternate": "spec/service/%s_spec.rb",
+      \   "test": ["spec/service/%s_spec.rb", "test/service/%s_test.rb"],
       \   "template": "class %S\nend" },
-      \ "app/workers/*.rb": {
-      \   "command": "worker",
+      \ "app/jobs/*.rb": {
+      \   "command": "job",
       \   "template": "class %S\nend" }
       \ }, 'keep')
 
@@ -251,33 +259,10 @@ call extend(g:rails_gem_projections, {
       \ "rspec": {
       \   "spec/support/*.rb": {
       \     "command": "support"}},
-      \ "cucumber": {
-      \   "features/*.feature": {
-      \     "command": "feature",
-      \     "template": "Feature: %h"},
-      \   "features/support/*.rb": {
-      \     "command": "support"},
-      \   "features/support/env.rb": {
-      \     "command": "support"},
-      \   "features/step_definitions/*_steps.rb": {
-      \     "command": "steps"}},
       \ "carrierwave": {
       \   "app/uploaders/*_uploader.rb": {
       \     "command": "uploader",
       \     "template": "class %SUploader < CarrierWave::Uploader::Base\nend"}},
-      \ "draper": {
-      \   "app/decorators/*_decorator.rb": {
-      \     "command": "decorator",
-      \     "affinity": "model",
-      \     "template": "class %SDecorator < ApplicationDecorator\nend"}},
-      \ "fabrication": {
-      \   "spec/fabricators/*_fabricator.rb": {
-      \     "command": ["fabricator", "factory"],
-      \     "alternate": "app/models/%s.rb",
-      \     "related": "db/schema.rb#%p",
-      \     "test": "spec/models/%s_spec.rb",
-      \     "template": "Fabricator :%s do\nend",
-      \     "affinity": "model"}},
       \ "factory_bot": {
       \   "spec/factories/*.rb": {
       \     "command": "factory",
