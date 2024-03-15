@@ -241,7 +241,7 @@ call extend(g:rails_projections, {
       \   "command": "service",
       \   "test": ["spec/service/%s_spec.rb", "test/service/%s_test.rb"],
       \   "template": "class %S\nend" },
-      \ "app/jobs/*.rb": {
+      \ "app/jobs/*_job.rb": {
       \   "command": "job",
       \   "template": "class %S\nend" }
       \ }, 'keep')
