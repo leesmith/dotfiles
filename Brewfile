@@ -29,6 +29,7 @@ brew 'shared-mime-info'
 brew 'ssh-copy-id'
 brew 'tmux'
 brew 'tree'
+brew 'vim'
 brew 'watch'
 brew 'wget'
 
