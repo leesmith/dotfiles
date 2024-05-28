@@ -14,6 +14,12 @@ DIR="$( cd "$(dirname "$0" )" && pwd )"
 [ -d "${HOME}/.config/nvim/undo" ]    || mkdir -p "${HOME}/.config/nvim/undo"
 ln -fs ${DIR}/nvim/init.vim "${HOME}/.config/nvim/init.vim"
 
+# Create vim file structure
+[ -d "${HOME}/.vim/pack" ]    || mkdir -p "${HOME}/.vim/pack/"
+[ -d "${HOME}/.vim/backups" ] || mkdir -p "${HOME}/.vim/backups"
+[ -d "${HOME}/.vim/swaps" ]   || mkdir -p "${HOME}/.vim/swaps"
+[ -d "${HOME}/.vim/undo" ]    || mkdir -p "${HOME}/.vim/undo"
+
 # Link dot files to $HOME
 for dotfile in $(find $DIR -maxdepth 1 -type f -name "*.symlink"); do
   dst="$HOME/.$(basename "${dotfile%.*}")"
@@ -35,5 +41,6 @@ done
 # execute scripts on install
 (exec "${DIR}/scripts/setup-git.sh")
 (exec "${DIR}/scripts/vim-minpac.sh")
+(exec "${DIR}/scripts/nvim-minpac.sh")
 
 echo "Installation was successful! 🎉"
