@@ -33,5 +33,5 @@ append_path() {
 }
 
 get_ruby_version() {
-  asdf current ruby | awk '{print $2}'
+  asdf current ruby | awk '{print $2}' | tail -n +2
 }
