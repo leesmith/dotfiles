@@ -28,6 +28,7 @@ global_config "pull.rebase" "true"
 global_config "push.default" "simple"
 global_config "merge.conflictstyle" "diff3"
 global_config "fetch.prune" "true"
+global_config "init.defaultBranch" "main"
 
 global_config "color.status.added" "green"
 global_config "color.status.changed" "yellow"
