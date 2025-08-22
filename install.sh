@@ -7,12 +7,12 @@ DIR="$( cd "$(dirname "$0" )" && pwd )"
 # fi
 
 # Create nvim file structure
-[ -d "${HOME}/.config" ] || mkdir "${HOME}/.config"
-[ -d "${HOME}/.config/nvim/pack" ]    || mkdir -p "${HOME}/.config/nvim/pack/"
-[ -d "${HOME}/.config/nvim/backups" ] || mkdir -p "${HOME}/.config/nvim/backups"
-[ -d "${HOME}/.config/nvim/swaps" ]   || mkdir -p "${HOME}/.config/nvim/swaps"
-[ -d "${HOME}/.config/nvim/undo" ]    || mkdir -p "${HOME}/.config/nvim/undo"
-ln -fs ${DIR}/nvim/init.vim "${HOME}/.config/nvim/init.vim"
+# [ -d "${HOME}/.config" ] || mkdir "${HOME}/.config"
+# [ -d "${HOME}/.config/nvim/pack" ]    || mkdir -p "${HOME}/.config/nvim/pack/"
+# [ -d "${HOME}/.config/nvim/backups" ] || mkdir -p "${HOME}/.config/nvim/backups"
+# [ -d "${HOME}/.config/nvim/swaps" ]   || mkdir -p "${HOME}/.config/nvim/swaps"
+# [ -d "${HOME}/.config/nvim/undo" ]    || mkdir -p "${HOME}/.config/nvim/undo"
+# ln -fs ${DIR}/nvim/init.vim "${HOME}/.config/nvim/init.vim"
 
 # Create vim file structure
 [ -d "${HOME}/.vim/pack" ]    || mkdir -p "${HOME}/.vim/pack/"
@@ -41,6 +41,6 @@ done
 # execute scripts on install
 (exec "${DIR}/scripts/setup-git.sh")
 (exec "${DIR}/scripts/vim-minpac.sh")
-(exec "${DIR}/scripts/nvim-minpac.sh")
+# (exec "${DIR}/scripts/nvim-minpac.sh")
 
 echo "Installation was successful! 🎉"
