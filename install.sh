@@ -42,5 +42,6 @@ done
 (exec "${DIR}/scripts/setup-git.sh")
 (exec "${DIR}/scripts/vim-minpac.sh")
 # (exec "${DIR}/scripts/nvim-minpac.sh")
+(exec "${DIR}/scripts/asdf.sh")
 
 echo "Installation was successful! 🎉"
