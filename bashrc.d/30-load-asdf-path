@@ -1,6 +1,10 @@
 # vim: set ft=sh sw=2 ts=2 expandtab:
 
-. $(brew --prefix asdf)/libexec/asdf.sh
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+# . $(brew --prefix asdf)/libexec/asdf.sh
+# . $(brew --prefix asdf)/etc/bash_completion.d/asdf
+
+export ASDF_DATA_DIR="$HOME/.asdf"
+prepend_path "$ASDF_DATA_DIR/shims"
+. <(asdf completion bash)
 
 prepend_path "./bin"
