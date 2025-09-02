@@ -7,7 +7,7 @@
   "logo_style": "",
   "entries": [
     { "type": "User" },
-    { "type": "Hostname" },
+    { "type": "Hostname", "disabled": true },
     { "type": "Model", "disabled": true },
     { "type": "Distro" },
     {

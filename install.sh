@@ -38,6 +38,10 @@ for program in ${DIR}/bin/*; do
   ln -fs $program "${HOME}/bin/$(basename $program)"
 done
 
+# Link archey4 config
+[ -d "${HOME}/.config/archey4" ] || mkdir "${HOME}/.config/archey4"
+ln -fs ${DIR}/config/archey4/config.json "${HOME}/.config/archey4/config.json"
+
 # execute scripts on install
 (exec "${DIR}/scripts/setup-git.sh")
 (exec "${DIR}/scripts/vim-minpac.sh")
