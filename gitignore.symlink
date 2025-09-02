@@ -1,6 +1,6 @@
 # See https://github.com/github/gitignore/tree/master/Global
 
-# osx
+# Macos
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -22,3 +22,6 @@ Session.vim
 # ctags
 tags
 TAGS
+
+# other
+pg.out
