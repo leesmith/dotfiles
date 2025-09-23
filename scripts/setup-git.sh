@@ -23,6 +23,10 @@ read -p "Enter your global git user.email: " email
 global_config "user.name" "$name"
 global_config "user.email" "$email"
 
+global_config "gpg.format" "ssh"
+global_config "user.signingkey" "${HOME}/.ssh/id_ed25519.pub"
+global_config "commit.gpgsign" "true"
+
 global_config "branch.autosetuprebase" "always"
 global_config "pull.rebase" "true"
 global_config "push.default" "simple"
