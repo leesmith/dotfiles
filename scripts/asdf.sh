@@ -10,5 +10,6 @@ asdf plugin add nodejs
 asdf plugin add postgres
 asdf plugin add python
 asdf plugin add ruby
+asdf plugin add sqlite
 
 exit 0
