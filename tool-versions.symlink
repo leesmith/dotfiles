@@ -1,5 +1,6 @@
-ruby 3.4.5
-nodejs 24.2.0
 golang 1.25.1
-python 3.13.7
+nodejs 24.8.0
 postgres 17.5
+python 3.13.7
+ruby 3.4.6
+sqlite 3.50.4
