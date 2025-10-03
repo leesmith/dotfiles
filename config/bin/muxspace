@@ -1,8 +1,5 @@
-#!/bin/bash
-#
-# Description
-# -----------
-# Script to create a new tmux session and basic two pane layout with vim
+#!/usr/bin/env bash
+# muxspace - Script to create a new tmux session and basic two pane layout with vim
 # launched in the right-hand pane. The tmux session will get its name from the
 # directory you run the script in (usually a project directory).
 
