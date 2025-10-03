@@ -33,9 +33,9 @@ for dotfile in ${DIR}/bashrc.d/*; do
 done
 
 # Link files in bin
-[ -d "${HOME}/bin" ] || mkdir "${HOME}/bin"
-for program in ${DIR}/bin/*; do
-  ln -fs $program "${HOME}/bin/$(basename $program)"
+[ -d "${HOME}/.config/bin" ] || mkdir "${HOME}/.config/bin"
+for program in ${DIR}/config/bin/*; do
+  ln -fs $program "${HOME}/.config/bin/$(basename $program)"
 done
 
 # Link archey4 config
