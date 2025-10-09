@@ -32,10 +32,10 @@ for dotfile in ${DIR}/bashrc.d/*; do
   ln -fs $dotfile "${HOME}/.bashrc.d/$(basename $dotfile)"
 done
 
-# Link files in bin
-[ -d "${HOME}/.config/bin" ] || mkdir "${HOME}/.config/bin"
-for program in ${DIR}/config/bin/*; do
-  ln -fs $program "${HOME}/.config/bin/$(basename $program)"
+# Link files in bin to ~/.local/bin
+[ -d "${HOME}/.local/bin" ] || mkdir "${HOME}/.local/bin"
+for program in ${DIR}/bin/*; do
+  ln -fs $program "${HOME}/.local/bin/$(basename $program)"
 done
 
 # Link archey4 config
