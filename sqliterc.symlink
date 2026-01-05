@@ -1,0 +1,6 @@
+.headers on
+.mode box
+.nullvalue NULL
+.changes on
+.echo on
+.timer on
