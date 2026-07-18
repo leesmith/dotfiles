@@ -3,11 +3,10 @@
 # Get the current directory
 DIR="$( cd "$(dirname "$0" )" && pwd )"
 
-# if [ "$(uname -s)" == "Darwin" ]; then
-# fi
+[ -d "${HOME}/.config" ] || mkdir "${HOME}/.config"
+[ -d "${HOME}/.local" ] || mkdir "${HOME}/.local"
 
 # Create nvim file structure
-# [ -d "${HOME}/.config" ] || mkdir "${HOME}/.config"
 # [ -d "${HOME}/.config/nvim/pack" ]    || mkdir -p "${HOME}/.config/nvim/pack/"
 # [ -d "${HOME}/.config/nvim/backups" ] || mkdir -p "${HOME}/.config/nvim/backups"
 # [ -d "${HOME}/.config/nvim/swaps" ]   || mkdir -p "${HOME}/.config/nvim/swaps"
