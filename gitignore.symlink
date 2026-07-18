@@ -25,3 +25,6 @@ TAGS
 
 # other
 pg.out
+
+# Claude configs
+**/.claude/settings.local.json
